@@ -2,6 +2,7 @@ package kassaSysteem;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class Main {
 
@@ -27,12 +28,21 @@ public class Main {
         // Creating my own shopping cart and giving it a name
         WinkelWagen mijnWagen = new WinkelWagen("Devrix");
 
-        // Adding 5 random products to my own shoppingcart
+        // Creating scanner
+        Scanner input = new Scanner(System.in);
+
+        // Adding 3 random products to my own shoppingcart
         mijnWagen.addProduct(productOne.getProductBarcode());   // 1
-        mijnWagen.addProduct(productThree.getProductBarcode()); // 2
+        mijnWagen.addProduct(productFour.getProductBarcode());  // 2
         mijnWagen.addProduct(productFour.getProductBarcode());  // 3
-        mijnWagen.addProduct(productFour.getProductBarcode());  // 4
-        mijnWagen.addProduct(productTwo.getProductBarcode());   // 5
+
+        // Adding 1st custom product
+        String barcode1 = input.nextLine();
+        mijnWagen.addProduct(barcode1);  // 1
+
+        // Adding 2nd custom product
+        String barcode2 = input.nextLine();
+        mijnWagen.addProduct(barcode2);  // 2
 
         // Checking the barcodes inside my shopping cart
         System.out.println(mijnWagen.viewWinkelWagen());
