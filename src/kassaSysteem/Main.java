@@ -13,6 +13,7 @@ public class Main {
         Product productThree = new Product("8718452162534", "Coca Cola", "Regular");
         Product productFour = new Product("8718452112233", "Mercedes", "GLS");
 
+        System.out.println(productFour);
         // Adding 4 random products to "Products database"
         ArrayList<Product> products = new ArrayList<Product>();
         products.add(productOne);   // 1
@@ -27,11 +28,11 @@ public class Main {
         WinkelWagen mijnWagen = new WinkelWagen("Devrix");
 
         // Adding 5 random products to my own shoppingcart
-        mijnWagen.addProduct(productOne.getID());   // 1
-        mijnWagen.addProduct(productThree.getID()); // 2
-        mijnWagen.addProduct(productFour.getID());  // 3
-        mijnWagen.addProduct(productFour.getID());  // 4
-        mijnWagen.addProduct(productTwo.getID());   // 5
+        mijnWagen.addProduct(productOne.getProductBarcode());   // 1
+        mijnWagen.addProduct(productThree.getProductBarcode()); // 2
+        mijnWagen.addProduct(productFour.getProductBarcode());  // 3
+        mijnWagen.addProduct(productFour.getProductBarcode());  // 4
+        mijnWagen.addProduct(productTwo.getProductBarcode());   // 5
 
         // Checking the barcodes inside my shopping cart
         System.out.println(mijnWagen.viewWinkelWagen());
@@ -48,8 +49,8 @@ public class Main {
             for (Product item : products) {
                 // For debugging purposes...
                 // System.out.println(indx2 + " " + item.getID() + product);
-                if (Objects.equals(item.getID(), product)) {
-                    System.out.println(products.get(indx2).getProduct());
+                if (Objects.equals(item.getProductBarcode(), product)) {
+                    System.out.println(products.get(indx2).getProductData());
                 }
                 indx2++;
             }

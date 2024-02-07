@@ -12,11 +12,15 @@ public class Product {
         this.productType = productType;
     }
 
-    public String getProduct() {
+    public String toString() {
         return String.format("%s %s", productBrand, productType);
     }
 
-    public String getID() {
+    public String getProductData() {
+        return String.format("%s %s", productBrand, productType);
+    }
+
+    public String getProductBarcode() {
         return productBarcode;
     }
 }
