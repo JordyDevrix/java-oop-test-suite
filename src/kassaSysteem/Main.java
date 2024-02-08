@@ -48,9 +48,30 @@ public class Main {
         System.out.println(mijnWagen.viewWinkelWagen());
 
 
-        // SHOWING SHOPPINGCART CONTENTS
+        // SHOWING SHOPPINGCART BEFORE REMOVING CONTENTS
         // First forloop going through all my products
         int indx1 = 0;
+        for (String product : mijnWagen.viewWinkelWagen()) {
+            int indx2 = 0;
+            /* second forloop going through each product that's available and then checking if it is
+               inside my shoppingcart
+             */
+            for (Product item : products) {
+                // For debugging purposes...
+                // System.out.println(indx2 + " " + item.getID() + product);
+                if (Objects.equals(item.getProductBarcode(), product)) {
+                    System.out.println(products.get(indx2).getProductData());
+                }
+                indx2++;
+            }
+            indx1++;
+        }
+
+        mijnWagen.removeProduct("8718452123456");
+
+        // SHOWING SHOPPINGCART AFTER REMOVING CONTENTS
+        // First forloop going through all my products
+        indx1 = 0;
         for (String product : mijnWagen.viewWinkelWagen()) {
             int indx2 = 0;
             /* second forloop going through each product that's available and then checking if it is
