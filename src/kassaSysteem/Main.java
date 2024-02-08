@@ -67,7 +67,10 @@ public class Main {
             indx1++;
         }
 
-        mijnWagen.removeProduct("8718452123456");
+        // Removing 1 product from basket
+        String productToRemove = "8718452112233";
+        System.out.printf("\nremoving product: %s \n\n", productToRemove);
+        mijnWagen.removeProduct(productToRemove);
 
         // SHOWING SHOPPINGCART AFTER REMOVING CONTENTS
         // First forloop going through all my products
