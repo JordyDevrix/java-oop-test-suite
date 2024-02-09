@@ -1,0 +1,48 @@
+######################################### DOMEIN klasse
+---------------
+<<Product>>
+Product Barcode
+Product Brand
+Product Type
+---------------
+
+
+
+---------------
+<<WinkelWagen>>
+Barcodes
+Winkelwagen eigenaar
+---------------
+#########################################
+
+
+
+
+
+######################################### APPLICATIE MODEL klasse
+---------------
+PRODUCT
+- productBarcode:   String
+- productBrand:     String
+- productType:      String
+---------------
++ <<create>> Product(barcode: string, brand: string, type: string)
++ toString():           String
++ getProductData():     String
++ getProductBarcode():  String
+---------------
+
+
+
+---------------
+WINKELWAGEN
+- Barcodes
+- Winkelwagen eigenaar
+---------------
++ <<create>> WinkelWagen(winkelWagenEigenaar: String)
++ addProduct(Barcode: String):      void
++ viewWinkelWagen():                ArrayList<String>
++ removeProduct(Barcode: String):   void
++ devTestView():                    String
+---------------
+#########################################
