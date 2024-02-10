@@ -104,11 +104,5 @@ public class Main {
 
             }
         }
-
-        // Adding 3 random products to my own shoppingcart
-        /*mijnWagen.addProduct(productOne.getProductBarcode());   // 1
-        mijnWagen.addProduct(productFour.getProductBarcode());  // 2
-        mijnWagen.addProduct(productFour.getProductBarcode());  // 3*/
-
     }
 }
