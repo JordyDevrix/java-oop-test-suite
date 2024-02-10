@@ -14,7 +14,6 @@ public class Main {
         Product productThree = new Product("8718452162534", "Coca Cola", "Regular");
         Product productFour = new Product("8718452112233", "Mercedes", "GLS");
 
-        System.out.println(productFour);
         // Adding 4 random products to "Products database"
         ArrayList<Product> products = new ArrayList<Product>();
         products.add(productOne);   // 1
@@ -28,7 +27,12 @@ public class Main {
         boolean running = true;
 
         // Creating my own shopping cart and giving it a name
-        WinkelWagen mijnWagen = new WinkelWagen("Devrix");
+        Scanner nameInput = new Scanner(System.in);
+        System.out.println("Please enter a name:");
+        String cartName = nameInput.nextLine();
+        WinkelWagen mijnWagen = new WinkelWagen(cartName);
+
+        System.out.printf("\nWelcome %s, ", cartName);
 
         // creating a while loop so that the program keeps running
         while (running) {
@@ -36,7 +40,7 @@ public class Main {
 
             System.out.println(
                     """
-                            Make a choice
+                            Please make a choice:
                             [1] view shopping cart content
                             [2] add product
                             [3] remove product
@@ -89,11 +93,14 @@ public class Main {
 
             } else if (Objects.equals(choice, 5)) {
 
+                System.out.println("Closing...");
+                nameInput.close();
+                input.close();
                 running = false;
 
             } else {
 
-                System.out.println("this is not an option, please try again");
+                System.out.println("This is not an option, please try again.");
 
             }
         }
