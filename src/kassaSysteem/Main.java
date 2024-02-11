@@ -31,6 +31,7 @@ public class Main {
         System.out.println("Please enter a name:");
         String cartName = nameInput.nextLine();
         WinkelWagen mijnWagen = new WinkelWagen(cartName);
+        winkelWagens.add(mijnWagen);
 
         System.out.printf("\nWelcome %s, ", cartName);
 
@@ -45,7 +46,8 @@ public class Main {
                             [2] add product
                             [3] remove product
                             [4] view all the barcodes in my shopping cart
-                            [5] stop
+                            [5] view available shopping carts
+                            [6] stop
                             """
             );
 
@@ -92,6 +94,14 @@ public class Main {
                 System.out.println(mijnWagen.viewWinkelWagen());
 
             } else if (Objects.equals(choice, 5)) {
+
+                // Checking all available shoppingcarts
+
+                for (WinkelWagen contents : winkelWagens) {
+                    System.out.println(contents.devTestView());
+                }
+
+            } else if (Objects.equals(choice, 6)) {
 
                 System.out.println("Closing...");
                 nameInput.close();
