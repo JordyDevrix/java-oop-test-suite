@@ -15,14 +15,14 @@ public class Main {
         Product productFour = new Product("8718452112233", "Mercedes", "GLS");
 
         // Adding 4 random products to "Products database"
-        ArrayList<Product> products = new ArrayList<Product>();
+        ArrayList<Product> products = new ArrayList<>();
         products.add(productOne);   // 1
         products.add(productTwo);   // 2
         products.add(productThree); // 3
         products.add(productFour);  // 4
 
         // Creating shoppingcarts list
-        ArrayList<WinkelWagen> winkelWagens = new ArrayList<WinkelWagen>();
+        ArrayList<WinkelWagen> winkelWagens = new ArrayList<>();
 
         boolean running = true;
 
