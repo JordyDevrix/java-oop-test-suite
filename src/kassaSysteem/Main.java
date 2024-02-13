@@ -15,14 +15,14 @@ public class Main {
         Product productFour = new Product("8718452112233", "Mercedes", "GLS");
 
         // Adding 4 random products to "Products database"
-        ArrayList<Product> products = new ArrayList<Product>();
+        ArrayList<Product> products = new ArrayList<>();
         products.add(productOne);   // 1
         products.add(productTwo);   // 2
         products.add(productThree); // 3
         products.add(productFour);  // 4
 
         // Creating shoppingcarts list
-        ArrayList<WinkelWagen> winkelWagens = new ArrayList<WinkelWagen>();
+        ArrayList<WinkelWagen> winkelWagens = new ArrayList<>();
 
         boolean running = true;
 
@@ -31,6 +31,7 @@ public class Main {
         System.out.println("Please enter a name:");
         String cartName = nameInput.nextLine();
         WinkelWagen mijnWagen = new WinkelWagen(cartName);
+        winkelWagens.add(mijnWagen);
 
         System.out.printf("\nWelcome %s, ", cartName);
 
@@ -45,7 +46,8 @@ public class Main {
                             [2] add product
                             [3] remove product
                             [4] view all the barcodes in my shopping cart
-                            [5] stop
+                            [5] view available shopping carts
+                            [6] stop
                             """
             );
 
@@ -92,6 +94,14 @@ public class Main {
                 System.out.println(mijnWagen.viewWinkelWagen());
 
             } else if (Objects.equals(choice, 5)) {
+
+                // Checking all available shoppingcarts
+
+                for (WinkelWagen contents : winkelWagens) {
+                    System.out.println(contents.devTestView());
+                }
+
+            } else if (Objects.equals(choice, 6)) {
 
                 System.out.println("Closing...");
                 nameInput.close();

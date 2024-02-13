@@ -25,6 +25,6 @@ public class WinkelWagen {
     }
 
     public String devTestView() {
-        return winkelWagenEigenaar + "\nBarcodes:\n" + barcodes;
+        return String.format("Owner:\t\t%s\nbarcodes:\t%s", winkelWagenEigenaar, barcodes);
     }
 }
