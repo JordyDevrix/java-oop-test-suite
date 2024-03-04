@@ -1,20 +1,19 @@
 package AbstractKlasLes;
 
-import vidcolSuperKlas.Developer;
-import vidcolSuperKlas.Manager;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        vidcolSuperKlas.Developer dvrx = new Developer(4132, "Jordy Devrix");
-        System.out.println(dvrx.getId());
-        dvrx.executeTask();
+        Developer jan = new Developer(4132, "Jan");
+        Manager joost = new Manager(4132, "Joost Klein", "IT");
 
-        vidcolSuperKlas.Manager devrix = new vidcolSuperKlas.Manager(4132, "ma men", "IT");
-        devrix.executeTask();
+        ArrayList<Employee> employeeList = new ArrayList<>();
+        employeeList.add(jan);
+        employeeList.add(joost);
 
-        vidcolSuperKlas.Manager jordy = new Manager(2109, "JORDY DEVRIXXX", "Customer support");
-        System.out.println(jordy.getId());
-
-
+        for (Employee employee : employeeList) {
+            System.out.println(employee.getName());
+            employee.executeTask();
+        }
     }
 }

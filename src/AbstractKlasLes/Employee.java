@@ -7,7 +7,7 @@ package AbstractKlasLes;
 
     A superclass cannot be deleted else the relational class will not receive its information
 */
-public class Employee {
+abstract class Employee {
     private int id;
     private String name;
 
@@ -23,4 +23,6 @@ public class Employee {
     public String getName() {
         return name;
     }
+
+    abstract void executeTask();
 }
